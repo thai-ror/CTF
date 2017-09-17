@@ -1,0 +1,9 @@
+How many type of face in this file? "Read" them and you can get flag.
+
+Download file here:
+http://material.wargame.whitehat.vn/challenges/3/Crypto003_235f08ecc1532926a2650f9f480da37a90f8c8d4.zip
+Submit WhiteHat{sha1(flag)}
+Example: flag = Hello World
+sha1("Hello World") = 0a4d55a8d778e5022fab701977c5d840bbc486d0
+You must submit: WhiteHat{0a4d55a8d778e5022fab701977c5d840bbc486d0}
+(all hash charactera in lowercase)

@@ -1,0 +1,13 @@
+http://chall04-crypto02.wargame.whitehat.vn/
+
+import sys
+from Crypto.Hash import SHA256
+from Crypto.Cipher.AES import AESCipher
+from flag import flag as create
+def encrypt(m):
+        flag = create()
+        key = SHA256.new(flag).digest()
+        s = 'something!' + m.decode('base64') + flag
+        p = 16 - (len(s) % 16)
+        s = s + (chr(p) * p)
+        return AESCipher(key).encrypt(s).encode("base64")
