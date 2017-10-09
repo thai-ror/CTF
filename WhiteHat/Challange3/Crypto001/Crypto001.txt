@@ -6,3 +6,6 @@ Example: flag = Hello World
 sha1("Hello World") = 0a4d55a8d778e5022fab701977c5d840bbc486d0
 submit: WhiteHat{0a4d55a8d778e5022fab701977c5d840bbc486d0}
 (all hash characters in lowercase)
+
+
+FLAG: BORN WAS CEASAR THAT YEAR THE IS FLAG.

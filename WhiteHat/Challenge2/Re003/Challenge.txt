@@ -1,0 +1,184 @@
+  5           0 LOAD_CONST               1 (50)
+              3 STORE_FAST               0 (n)
+
+  6           6 LOAD_GLOBAL              0 (True)
+              9 BUILD_LIST               1
+             12 LOAD_FAST                0 (n)
+             15 BINARY_MULTIPLY     
+             16 STORE_FAST               1 (tmp_list)
+
+  7          19 SETUP_LOOP             111 (to 133)
+             22 LOAD_GLOBAL              1 (xrange)
+             25 LOAD_CONST               2 (3)
+             28 LOAD_GLOBAL              2 (int)
+             31 LOAD_FAST                0 (n)
+             34 LOAD_CONST               3 (0.5)
+             37 BINARY_POWER        
+             38 CALL_FUNCTION            1
+             41 LOAD_CONST               4 (1)
+             44 BINARY_ADD          
+             45 LOAD_CONST               5 (2)
+             48 CALL_FUNCTION            3
+             51 GET_ITER            
+        >>   52 FOR_ITER                77 (to 132)
+             55 STORE_FAST               2 (i)
+
+  8          58 LOAD_FAST                1 (tmp_list)
+             61 LOAD_FAST                2 (i)
+             64 BINARY_SUBSCR       
+             65 POP_JUMP_IF_FALSE       52
+
+  9          68 LOAD_GLOBAL              3 (False)
+             71 BUILD_LIST               1
+             74 LOAD_FAST                0 (n)
+             77 LOAD_FAST                2 (i)
+             80 LOAD_FAST                2 (i)
+             83 BINARY_MULTIPLY     
+             84 BINARY_SUBTRACT     
+             85 LOAD_CONST               4 (1)
+             88 BINARY_SUBTRACT     
+             89 LOAD_CONST               5 (2)
+             92 LOAD_FAST                2 (i)
+             95 BINARY_MULTIPLY     
+             96 BINARY_DIVIDE       
+             97 LOAD_CONST               4 (1)
+            100 BINARY_ADD          
+            101 BINARY_MULTIPLY     
+            102 LOAD_FAST                1 (tmp_list)
+            105 LOAD_FAST                2 (i)
+            108 LOAD_FAST                2 (i)
+            111 BINARY_MULTIPLY     
+            112 LOAD_CONST               0 (None)
+            115 LOAD_CONST               5 (2)
+            118 LOAD_FAST                2 (i)
+            121 BINARY_MULTIPLY     
+            122 BUILD_SLICE              3
+            125 STORE_SUBSCR        
+            126 JUMP_ABSOLUTE           52
+            129 JUMP_ABSOLUTE           52
+        >>  132 POP_BLOCK           
+
+ 10     >>  133 LOAD_CONST               5 (2)
+            136 BUILD_LIST               1
+            139 BUILD_LIST               0
+            142 LOAD_GLOBAL              1 (xrange)
+            145 LOAD_CONST               2 (3)
+            148 LOAD_FAST                0 (n)
+            151 LOAD_CONST               5 (2)
+            154 CALL_FUNCTION            3
+            157 GET_ITER            
+        >>  158 FOR_ITER                22 (to 183)
+            161 STORE_FAST               2 (i)
+            164 LOAD_FAST                1 (tmp_list)
+            167 LOAD_FAST                2 (i)
+            170 BINARY_SUBSCR       
+            171 POP_JUMP_IF_FALSE      158
+            174 LOAD_FAST                2 (i)
+            177 LIST_APPEND              2
+            180 JUMP_ABSOLUTE          158
+        >>  183 BINARY_ADD          
+            184 STORE_FAST               3 (list)
+
+ 12         187 LOAD_CONST               6 ('t')
+            190 LOAD_CONST               7 ('w')
+            193 LOAD_CONST               8 ('o')
+            196 LOAD_CONST               9 ('d')
+            199 LOAD_CONST              10 ('u')
+            202 LOAD_CONST              11 ('e')
+            205 LOAD_CONST               6 ('t')
+            208 LOAD_CONST              12 ('_')
+            211 LOAD_CONST              13 ('q')
+            214 LOAD_CONST              14 ('k')
+            217 LOAD_CONST              15 ('j')
+            220 LOAD_CONST              16 ('h')
+            223 LOAD_CONST              17 ('z')
+            226 LOAD_CONST              10 ('u')
+            229 LOAD_CONST              18 ('v')
+            232 LOAD_CONST              19 ('c')
+            235 LOAD_CONST              20 ('l')
+            238 LOAD_CONST              16 ('h')
+            241 LOAD_CONST              17 ('z')
+            244 LOAD_CONST              11 ('e')
+            247 LOAD_CONST               7 ('w')
+            250 LOAD_CONST              21 ('y')
+            253 LOAD_CONST              16 ('h')
+            256 LOAD_CONST              17 ('z')
+            259 LOAD_CONST              22 ('g')
+            262 LOAD_CONST              19 ('c')
+            265 LOAD_CONST              23 ('n')
+            268 LOAD_CONST              24 ('i')
+            271 LOAD_CONST               8 ('o')
+            274 LOAD_CONST              12 ('_')
+            277 LOAD_CONST              25 ('p')
+            280 LOAD_CONST              26 ('b')
+            283 LOAD_CONST              24 ('i')
+            286 LOAD_CONST              27 ('r')
+            289 LOAD_CONST               9 ('d')
+            292 LOAD_CONST              18 ('v')
+            295 LOAD_CONST               9 ('d')
+            298 LOAD_CONST              21 ('y')
+            301 LOAD_CONST              21 ('y')
+            304 LOAD_CONST              13 ('q')
+            307 LOAD_CONST               8 ('o')
+            310 LOAD_CONST               6 ('t')
+            313 LOAD_CONST              25 ('p')
+            316 LOAD_CONST              11 ('e')
+            319 LOAD_CONST              13 ('q')
+            322 LOAD_CONST              23 ('n')
+            325 LOAD_CONST              27 ('r')
+            328 LOAD_CONST              19 ('c')
+            331 LOAD_CONST              10 ('u')
+            334 LOAD_CONST              13 ('q')
+            337 BUILD_LIST              50
+            340 STORE_FAST               4 (challenge)
+
+ 13         343 LOAD_GLOBAL              4 (raw_input)
+            346 LOAD_CONST              28 ('Give me your flag: ')
+            349 CALL_FUNCTION            1
+            352 STORE_FAST               5 (flag)
+
+ 14         355 LOAD_FAST                5 (flag)
+            358 LOAD_CONST              29 (-7)
+            361 SLICE+1             
+            362 LOAD_FAST                5 (flag)
+            365 LOAD_CONST              29 (-7)
+            368 SLICE+2             
+            369 BINARY_ADD          
+            370 STORE_FAST               5 (flag)
+
+ 15         373 LOAD_CONST              30 (0)
+            376 STORE_FAST               6 (location)
+
+ 16         379 LOAD_CONST              31 ('')
+            382 STORE_FAST               7 (tmp_str)
+
+ 17         385 SETUP_LOOP              28 (to 416)
+            388 LOAD_FAST                3 (list)
+            391 GET_ITER            
+        >>  392 FOR_ITER                20 (to 415)
+            395 STORE_FAST               8 (item)
+
+ 18         398 LOAD_FAST                7 (tmp_str)
+            401 LOAD_FAST                4 (challenge)
+            404 LOAD_FAST                8 (item)
+            407 BINARY_SUBSCR       
+            408 INPLACE_ADD         
+            409 STORE_FAST               7 (tmp_str)
+            412 JUMP_ABSOLUTE          392
+        >>  415 POP_BLOCK           
+
+ 19     >>  416 LOAD_FAST                7 (tmp_str)
+            419 LOAD_FAST                5 (flag)
+            422 COMPARE_OP               2 (==)
+            425 POP_JUMP_IF_FALSE      436
+
+ 20         428 LOAD_CONST              32 ('Congratulation! Submit your flag')
+            431 PRINT_ITEM          
+            432 PRINT_NEWLINE       
+            433 JUMP_FORWARD             5 (to 441)
+
+ 22     >>  436 LOAD_CONST              33 ('Try your best, the rest will come')
+            439 PRINT_ITEM          
+            440 PRINT_NEWLINE       
+        >>  441 LOAD_CONST               0 (None)
+            444 RETURN_VALUE    
