@@ -1,0 +1,3 @@
+break /home/thai/Desktop/CTF/CTF/Test/relro.c:35
+break /home/thai/Desktop/CTF/CTF/Test/relro.c:18
+

