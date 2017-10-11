@@ -1,0 +1,12 @@
+winner | 100
+
+Vietl0tt v1.0
+
+nc winner.svattt.org 31335
+winner.c
+Binary
+libc.so
+
+Inspired by true story.
+
+http://news.zing.vn/nguoi-trung-xo-so-92-ty-dong-tang-anh-ban-ve-so-50-trieu-post693905.html
