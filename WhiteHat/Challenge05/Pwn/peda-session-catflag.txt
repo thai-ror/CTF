@@ -1,0 +1,7 @@
+break *0x80486D7
+break *0x8048757
+break *0x8048704
+break *0x8048860
+break *0x80487fc
+break *0x8048839
+
