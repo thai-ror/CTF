@@ -26,6 +26,7 @@ int main(){
 	printf("Enter password:");
 	
 	n = read(0,buffer,128) - 1;
+
 	if(n > 1)
 		if(!strncmp(password,buffer,strlen(buffer)))
 		{

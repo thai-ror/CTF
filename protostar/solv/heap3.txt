@@ -1,0 +1,10 @@
+heap2:
+http://www.kroosec.com/2012/12/protostar-heap2.html
+https://exploit-exercises.com/protostar/heap3/
+service AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+auth BBBB
+reset
+auth BBBB
+login
+
+
