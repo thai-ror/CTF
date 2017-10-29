@@ -1,0 +1,137 @@
+Bài Pwn01
+
+Dùng IDA để Reverse ra code
+
+int __cdecl main(int argc, const char **argv, const char **envp)
+{
+  signed int i; // [esp+0h] [ebp-288h]
+  int v5; // [esp+4h] [ebp-284h]
+  signed int j; // [esp+8h] [ebp-280h]
+  FILE *stream; // [esp+1Ch] [ebp-26Ch]
+  int c; // [esp+20h] [ebp-268h]
+  int v9[11]; // [esp+24h] [ebp-264h]
+  int v10; // [esp+50h] [ebp-238h]
+  int v11; // [esp+54h] [ebp-234h]
+  int v12; // [esp+58h] [ebp-230h]
+  char v13[5]; // [esp+1B4h] [ebp-D4h]
+  char v14; // [esp+1B9h] [ebp-CFh]
+  char v15; // [esp+1BAh] [ebp-CEh]
+  char v16; // [esp+1BBh] [ebp-CDh]
+  char v17[100]; // [esp+218h] [ebp-70h]
+  unsigned int v18; // [esp+27Ch] [ebp-Ch]
+
+  v18 = __readgsdword(20u);
+  for ( i = 0; i <= 99; ++i )
+    v17[i] = rand() % 90 + 33;
+  puts("Hi friend!");
+  puts("Are you good at Math ??");
+  puts("If y0u'r3 g0d 3n0ugh! Plzzz wr1t3 s0meth1ng 4 me then we c4n ch3ck 1t. ");
+  __isoc99_scanf("%s", v13);
+  v5 = 0;
+  for ( j = 0; j <= 4; ++j )
+  {
+    v9[j] = v17[j + 1];
+    v5 += v9[j];
+    v9[j + 5] = abs(v13[j + 6]);
+  }
+  v12 = 9;
+  v11 = 9;
+  v10 = 9;
+  if ( 9
+     * (v14 * v15 * (v5 - 0x15F)
+      + v5 * 2 * v14 * v16
+      + v5 * 3 * v16 * v15 
+      - 0x2BE * v14 * v16 
+      + 7 * v5 
+      - 1053 * v16 * v15
+      - 2457) )
+  {
+    printf("Nahhh !U may get the flag next time. But may be nerver !!");
+  }
+  else
+  {
+    stream = fopen("flag", "r");
+    while ( 1 )
+    {
+      c = fgetc(stream);
+      if ( feof(stream) )
+        break;
+      putchar(c);
+    }
+    fclose(stream);
+  }
+  return 1;
+}
+
+
+
+
+Mấu chốt vấn đề nằm ở đây
+Để đọc được Flag thì kết quả này phải =0
+
+9* (
+	 v14 * v15 * (v5 - 0x15F)
+      + v5 * 2 * v14 * v16
+      + v5 * 3 * v16 * v15
+      - 0x2BE * v14 * v16
+      + 7 * v5 
+      - 1053 * v16 * v15
+      - 2457) 
+	 )
+
+Vậy Phải làm cho v15,v16,v14=0
+Biểu thức rút gọn còn lại: 9* (7 * v5 - 2457)
+
+Muốn cho biểu thức =0,vậy phải làm sao cho v5= 351
+
+Cách tính v5 ở Hàm for này
+  v5 = 0;
+  for ( j = 0; j <= 4; ++j )
+  {
+    v9[j] = v17[j + 1];
+    v5 += v9[j];
+    v9[j + 5] = abs(v13[j + 6]);
+  }
+  
+Để cho v5=0
+  for ( j = 0; j <= 4; ++j )
+  {
+    v9[j] = v17[j + 1];
+    v5 += v9[j];
+    v9[j + 5] = abs(v13[j + 6]);
+  }
+  
+ For chạy 5 vòng ==> 2457/7/5=70
+ 1 Vòng =71 <== 350*7+1 = 2457
+ 
+Ta quan tâm chỗ này:
+    v9[j] = v17[j + 1];
+    v5 += v9[j];
+	
+  
+Ở đây Stack có dạng
+|	...		|	
+| v13[5]	|
+| v14		|
+| v15		|
+| v16		|
+| v17[100]  |
+|	...		|	
+
+
+Để cho v14,v15,v16=0
+Vậy phải Ghi đè v13 sao cho stack có dạng
+
+|	...			|	
+| v13[5]		| <- v13
+| 0000			| <- v14
+| 0000			| <- v15
+| 0000		    | <- v16 
+| 70 71 70 70   | <- v17
+| 70 70 70 70   | <- v17
+|	...			|	
+
+Khoảng cách từ v13 đến v14  0xd4-0xcf=5
+Khoảng cách từ v13 đến v17  0xd4-0x70=100
+
+
