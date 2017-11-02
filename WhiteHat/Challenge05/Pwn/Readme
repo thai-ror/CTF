@@ -50,6 +50,10 @@ High Address
 
 
 Khoảng cách từ v13 đến v17  0xd4-0x70=100
-
+=======================================
+Pwn02
+Ghi đè địa chỉ puts_GOT = system("/bin/cat /home/pwnd/flag")
+puts_GOT=	0x804A018
+system=		0x804865F
 
 
