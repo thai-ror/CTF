@@ -3,8 +3,8 @@ from pwn import *
 
 intro='''
 
-|...  | Argv
-|...  | Return
+|...  | shellcode  <--BSS_DATA
+|...  | Return     <- BSS_DATA
 |EIP  | get_string
 |EBP  | |
 |     | 72
