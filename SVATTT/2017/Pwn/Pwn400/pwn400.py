@@ -1,5 +1,21 @@
 from pwn import *
 
+
+intro='''
+
+|...  | Argv
+|...  | Return
+|EIP  | get_string
+|EBP  | |
+|     | 72
+|     | |
+|     | |
+| ... | s
+ESP
+
+'''
+
+
 def debug(r):
 	gdb.attach(r,'''
 	break *0x08048740
@@ -9,6 +25,7 @@ def debug(r):
 	''')
 
 def pwn():
+	print intro
 	r=process("./nokiacum886245")
 	#debug(r)
 	padding =72
