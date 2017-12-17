@@ -1,0 +1,17 @@
+Is it true that something encrypted is safe? No, it depends much on how you config things. Let's try to conquer my challenge!
+
+Host: dictionary-attack.grandprix.whitehatvn.com
+
+Backup: bak.dictionary-attack.grandprix.whitehatvn.com
+
+Port: 4321
+
+Download:
+
+http://material.grandprix.whitehatvn.com/grandprix2017/Dictionary_attack_a8633bc87a5ddf28cb2602d9424273b92aac27b4.zip
+
+http://bak.material.grandprix.whitehatvn.com/grandprix2017/Dictionary_attack_a8633bc87a5ddf28cb2602d9424273b92aac27b4.zip
+
+http://bak1.material.grandprix.whitehatvn.com/grandprix2017/Dictionary_attack_a8633bc87a5ddf28cb2602d9424273b92aac27b4.zip
+
+Author - BabyPhD

@@ -1,0 +1,15 @@
+A little joke. Can you pass it?
+
+Host: joke.grandprix.whitehatvn.com
+
+Backup: bak.joke.grandprix.whitehatvn.com
+
+Port: 10205
+
+Download:
+
+http://material.grandprix.whitehatvn.com/grandprix2017/Joke_3d50488a9ecbc58b0ac85b9ca74bfa03f555f6bb.zip
+
+http://bak.material.grandprix.whitehatvn.com/grandprix2017/Joke_3d50488a9ecbc58b0ac85b9ca74bfa03f555f6bb.zip
+
+http://bak1.material.grandprix.whitehatvn.com/grandprix2017/Joke_3d50488a9ecbc58b0ac85b9ca74bfa03f555f6bb.zip

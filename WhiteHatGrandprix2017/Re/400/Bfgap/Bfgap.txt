@@ -1,0 +1,11 @@
+I wrote a program to solve a task, but it is too slow. Can you optimize it? The flag is WhiteHat{sha1(output)}
+
+Download:
+
+http://material.grandprix.whitehatvn.com/grandprix2017/Bfgap_1fcde68a7e34853dd33092e1b3fcf4d8ec236c07.zip
+
+http://bak.material.grandprix.whitehatvn.com/grandprix2017/Bfgap_1fcde68a7e34853dd33092e1b3fcf4d8ec236c07.zip
+
+http://bak1.material.grandprix.whitehatvn.com/grandprix2017/Bfgap_1fcde68a7e34853dd33092e1b3fcf4d8ec236c07.zip
+
+Author - Anonymous

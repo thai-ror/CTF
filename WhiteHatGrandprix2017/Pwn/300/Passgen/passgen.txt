@@ -1,0 +1,17 @@
+A password generation program. Is it good enough?
+
+Host: passgen.grandprix.whitehatvn.com
+
+Backup: bak.passgen.grandprix.whitehatvn.com
+
+Port: 4599
+
+Download:
+
+http://material.grandprix.whitehatvn.com/grandprix2017/Passgen_c84a02d7c6572e51898a462f3ace4a8cc2a809d7.zip
+
+http://bak.material.grandprix.whitehatvn.com/grandprix2017/Passgen_c84a02d7c6572e51898a462f3ace4a8cc2a809d7.zip
+
+http://bak1.material.grandprix.whitehatvn.com/grandprix2017/Passgen_c84a02d7c6572e51898a462f3ace4a8cc2a809d7.zip
+
+Author - BabyPhD

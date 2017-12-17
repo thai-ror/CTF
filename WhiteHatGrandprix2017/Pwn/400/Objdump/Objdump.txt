@@ -1,0 +1,7 @@
+I have a web service for objdump. Can you pentest it for me?
+
+Host: objdump.grandprix.whitehatvn.com
+
+Backup: bak.objdump.grandprix.whitehatvn.com 
+
+Author - BkavTeam

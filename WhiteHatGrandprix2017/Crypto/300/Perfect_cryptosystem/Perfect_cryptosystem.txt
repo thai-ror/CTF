@@ -1,0 +1,17 @@
+We created a new perfect cryptosystem which is based on:
+
+- A secure random function
+
+- A combinatorial NP-complete problem
+
+We believe our cryptosystem is secure. Can you break our belief?
+
+Download: 
+
+http://material.grandprix.whitehatvn.com/grandprix2017/Perfect_cryptosystem_8928eb2018bdbc7d8c9a875c99a524593a32e98a.zip
+
+http://bak.material.grandprix.whitehatvn.com/grandprix2017/Perfect_cryptosystem_8928eb2018bdbc7d8c9a875c99a524593a32e98a.zip
+
+http://bak1.material.grandprix.whitehatvn.com/grandprix2017/Perfect_cryptosystem_8928eb2018bdbc7d8c9a875c99a524593a32e98a.zip
+
+Author - BabyPhD

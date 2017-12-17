@@ -1,0 +1,17 @@
+Alphanumeric shellcoding
+
+Host: shellcode-revenge.grandprix.whitehatvn.com
+
+Backup: bak.shellcode-revenge.grandprix.whitehatvn.com
+
+Port: 10203
+
+Download: 
+
+http://material.grandprix.whitehatvn.com/grandprix2017/Shellcode_revenge++_fd412fda44f96e2f24403f45686af9736fffb6e0.zip
+
+http://bak.material.grandprix.whitehatvn.com/grandprix2017/Shellcode_revenge++_fd412fda44f96e2f24403f45686af9736fffb6e0.zip
+
+http://bak1.material.grandprix.whitehatvn.com/grandprix2017/Shellcode_revenge++_fd412fda44f96e2f24403f45686af9736fffb6e0.zip
+
+Author - Anonymous

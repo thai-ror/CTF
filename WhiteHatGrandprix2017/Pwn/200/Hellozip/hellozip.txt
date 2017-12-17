@@ -1,0 +1,19 @@
+A program parsing zip file. Just a helloworld to zip. Is it vulnerable? Ssh onto my server and check it your self.
+
+Host: hellozip.grandprix.whitehatvn.com
+
+Backup: bak.hellozip.grandprix.whitehatvn.com
+
+Ssh account: sshuser
+
+Ssh password: whitehatgrandprix
+
+Download:
+
+http://material.grandprix.whitehatvn.com/grandprix2017/Hellozip_8a8fcfc68310ccfb6b001baba57c6ff6d20fb7bf.zip
+
+http://bak.material.grandprix.whitehatvn.com/grandprix2017/Hellozip_8a8fcfc68310ccfb6b001baba57c6ff6d20fb7bf.zip
+
+http://bak1.material.grandprix.whitehatvn.com/grandprix2017/Hellozip_8a8fcfc68310ccfb6b001baba57c6ff6d20fb7bf.zip
+
+Author - BabyPhD

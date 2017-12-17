@@ -1,0 +1,17 @@
+A simple memory manager Create your shell and take you to the flag…
+
+Host: memo-manager.grandprix.whitehatvn.com
+
+Backup: bak.memo-manager.grandprix.whitehatvn.com
+
+Port: 4598
+
+Download:
+
+http://material.grandprix.whitehatvn.com/grandprix2017/Memo_manager_b698a424cf54de12d260058b7ca040b8cd221156.zip
+
+http://bak.material.grandprix.whitehatvn.com/grandprix2017/Memo_manager_b698a424cf54de12d260058b7ca040b8cd221156.zip
+
+http://bak1.material.grandprix.whitehatvn.com/grandprix2017/Memo_manager_b698a424cf54de12d260058b7ca040b8cd221156.zip
+
+Author - Anonymous

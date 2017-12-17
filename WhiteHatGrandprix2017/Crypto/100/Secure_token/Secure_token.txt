@@ -1,0 +1,15 @@
+Welcome to my token provider
+
+Host: secure-token.grandprix.whitehatvn.com
+
+Backup: bak.secure-token.grandprix.whitehatvn.com
+
+Download:
+
+http://material.grandprix.whitehatvn.com/grandprix2017/Secure_token_7eae0c4bd33393d2854b2596868d22d3e33c9fd4.zip
+
+http://bak.material.grandprix.whitehatvn.com/grandprix2017/Secure_token_7eae0c4bd33393d2854b2596868d22d3e33c9fd4.zip
+
+http://bak1.material.grandprix.whitehatvn.com/grandprix2017/Secure_token_7eae0c4bd33393d2854b2596868d22d3e33c9fd4.zip
+
+Author - BkavTeam
